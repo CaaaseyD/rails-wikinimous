@@ -1,0 +1,14 @@
+<h1 class="p-3">Articles</h1>
+<div class="text-center">
+<h2><%= @article.title %></h2>
+<div class="d-flex justify-content-center">
+<%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe,
+            article_path(@article),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete?"} %>
+<div class="p-2"></div>
+<%= link_to edit_article_path(@article.id) do %>
+    <i class="fa fa-pencil"></i>
+<% end %>
+</div><br>
+<p><%= @article.content %></p>
+</div>
